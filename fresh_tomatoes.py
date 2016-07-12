@@ -59,13 +59,13 @@ main_page_head = '''
         .navbar-brand {
             margin: 5px;
             border-radius: 25px;
-            background: gray;
+            background: #44749D;
             width: 300px;
             height: 40px; 
         }
         .navbar-social {
             border-radius: 5px;
-            background: gray;
+            background: #44749D;
             width: 150px;
             height: 40px; 
         }
@@ -118,9 +118,9 @@ main_page_content = '''
     <!-- Main Page Content -->
     <div class="container">
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container" style="width:100%;">
+        <div class="topbar" style="width:100%;">
           <div class="social" style="float:right;">
-            <a class="navbar-social"><font color="blue"><b>Our Social Media</b></font></a>
+            <a class="navbar-social"><font color="white"><b>Our Social Media</b></font></a>
             <a href="https://twitter.com/BlackshrMovie">
             <img border="0" alt="twitter logo" src="Twitter_logo_blue_48.png">
             </a>
@@ -129,7 +129,7 @@ main_page_content = '''
             </a>
           </div>
           <div class="navbar-header" style="float:left;">
-            <a class="navbar-brand" href="#"><b><font color="blue">Fresh Tomatoes Movie Trailers</font></b></a>
+            <a class="navbar-brand" href="#"><b><font color="white">Fresh Tomatoes Movie Trailers</font></b></a>
           </div>
         </div>
       </div>
@@ -187,3 +187,4 @@ def open_movies_page(movies):
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
+
