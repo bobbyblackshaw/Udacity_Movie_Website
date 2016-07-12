@@ -118,7 +118,7 @@ main_page_content = '''
     <!-- Main Page Content -->
     <div class="container">
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="topbar" style="width:100%;">
+        <div class="container" style="width:100%;">
           <div class="social" style="float:right;">
             <a class="navbar-social"><font color="white"><b>Our Social Media</b></font></a>
             <a href="https://twitter.com/BlackshrMovie">
