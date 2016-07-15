@@ -64,7 +64,7 @@ main_page_head = '''
         .navbar-brand {
             margin: 5px;
             border-radius: 25px;
-            background: #44749D;
+            background: #44749D !important;
             width: 300px;
             height: 40px; 
         }
@@ -134,7 +134,7 @@ main_page_content = '''
             </a>
           </div>
           <div class="navbar-header" style="float:left;">
-            <a class="navbar-brand" href="#"><b><font color="white">Fresh Tomatoes Movie Trailers</font></b></a>
+            <h2><a class="navbar-brand" href="#"><b><font color="white">Fresh Tomatoes Movie Trailers</font></b></a></h2>
           </div>
         </div>
       </div>
@@ -151,13 +151,14 @@ main_page_content = '''
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+    <h2>{movie_title}({year_of_release})</h2>
+    <h4>IMDB Rating: {imdb_rating}</h4>
 </div>
 '''
 
 
 def create_movie_tiles_content(movies):
-    # The HTML content for this section of the page
+    '''The HTML content for this section of the page'''
     content = ''
     for movie in movies:
         # Extract the youtube ID from the url
@@ -171,6 +172,8 @@ def create_movie_tiles_content(movies):
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
+            year_of_release=movie.year_of_release,
+            imdb_rating=movie.imdb_rating,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id
         )
@@ -178,6 +181,7 @@ def create_movie_tiles_content(movies):
 
 
 def open_movies_page(movies):
+    '''Opens the movies page'''
     # Create or overwrite the output file
     output_file = open('fresh_tomatoes.html', 'w')
 
